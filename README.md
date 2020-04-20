@@ -22,6 +22,16 @@ An alternative command is:
 `java -cp ".:imagelab.jar" Run`  
 Note that on Windows platforms, the ":" character in the classpath must be changed to the ";" character.
 
+## Create executable .jar in BlueJ:
+* Make sure that all files used within the application are compiled, and open the project. 
+* Select the _Create Jar_ File function from the _Project Menu_ where a dialogue opens to select the main class. 
+
+* Select the __Run__ class within the __imagelab__ directory with a `public static void main` method.
+
+* Next, there is a file chooser dialogue that allows you to select the name for the `.jar` file. Type `imagelab` and click Create.
+
+* Make sure the `imagelab.jar` file is in the same directory as the other libraries referenced.
+
 ## License
 
 ImageLab is a framework for student exploration of image processing.  
