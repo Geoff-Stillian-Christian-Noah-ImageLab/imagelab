@@ -74,8 +74,8 @@ public class Note {
     /** Special Note that represents the Null Note.*/
     public static final Note NULL_NOTE = new Note(-1, -1, -1, -1);
 
-    // Instance Data
-    /*Midi channel through
+    //Instance Data
+    /**Midi channel through
      *which instrument will
      *be received.*/
     private int channel;    // 0 to 15
@@ -83,9 +83,9 @@ public class Note {
     private int pitch;      // 0 to 127; 60 = Middle C
     /**The duration of the note.*/
     private int duration;   // in milliseconds
-    /*The audible range of the note.*/
+    /**The audible range of the note.*/
     private int velocityOn; // 0 to 127 (Note-On Velocity)
-    
+
     /**
      * Construct a specific Note.
      * @param c channel
@@ -112,7 +112,7 @@ public class Note {
         duration = d;
         velocityOn = v;
     }
-    
+
     /**
      * Access this note's channel.
      * @return the channel
@@ -146,9 +146,9 @@ public class Note {
     }
 
     public String toString() {
-        return "[Channel " + channel +
-               "; Pitch " + pitch +
-               "; Duration " + duration +
-               "; velocityOn " + velocityOn + "]";
+        return "[Channel " + channel 
+         + "; Pitch " + pitch 
+         + "; Duration " + duration
+         + "; velocityOn " + velocityOn + "]";
     }
 }
