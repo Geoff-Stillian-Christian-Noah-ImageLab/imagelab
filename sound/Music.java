@@ -100,7 +100,7 @@ public class Music {
     private void establishSynthesizer(final int numCh, final int instr) {
         int[] instruments = new int[numCh];
         for (int i = 0; i < numCh; i++) {
-       	     instruments[i] = instr;
+             instruments[i] = instr;
          }
         establishSynthesizer(numCh, instruments);
     }
@@ -129,7 +129,8 @@ public class Music {
      * @return list of instruments available in this object's synth
      */
     public java.util.List<Instrument> availableInstruments() {
-        java.util.List<Instrument> instruments = new java.util.ArrayList<Instrument>();
+        java.util.List<Instrument> instruments =
+                  new java.util.ArrayList<Instrument>();
         Instrument[] availInst = synth.getAvailableInstruments();
         int numInst = availInst.length;
         for (int i = 0; i < numInst; i++) {
@@ -165,7 +166,7 @@ public class Music {
         /** Establish history if this is the first chord played. */
         if (null == noteHistory) {
             noteHistory = new java.util.ArrayList<Note>();
-            for (int i = 0; i < chord.numVoices(); i++ ) {
+            for (int i = 0; i < chord.numVoices(); i++) {
                 noteHistory.add(Note.NULL_NOTE);
             }
         }
@@ -176,11 +177,14 @@ public class Music {
             prev = noteHistory.get(note.channel());
             if (note.equals(Note.NULL_NOTE)) {
                 //System.out.print("[NULL_NOTE] ");
-                channels[note.channel()].noteOff(prev.pitch(),prev.velocityOn());
+                channels[note.channel()].noteOff(
+                             prev.pitch(), prev.velocityOn());
             } else if (note.pitch() != prev.pitch()) {
                 // System.out.println("  Note: " + note);
-                channels[note.channel()].noteOff(prev.pitch(),prev.velocityOn());
-                channels[note.channel()].noteOn(note.pitch(),note.velocityOn());
+                channels[note.channel()].noteOff(prev.pitch(),
+                prev.velocityOn());
+                channels[note.channel()].noteOn(note.pitch(),
+                 note.velocityOn());
                 duration = (duration > note.duration()) ? note.duration() : duration;
                 noteHistory.set(note.channel(), note);
             }
@@ -224,23 +228,33 @@ public class Music {
             channels[note.channel()].noteOff(note.pitch(),note.velocityOn());
         }
     }
-
+    /**
+    *@return synth.
+    */
     public Synthesizer getSynthesizer() {
 	return synth;
     }
-
+    /**
+    *@return channels.
+    */
     public MidiChannel[] getChannels() {
 	return channels;
     }
-
+    /**
+     *@return instrument.
+     */
     public int getInstrument() {
 	return instrument;
     }
-
+    /**
+     *@return velocity.
+     */
     public int getVelocity() {
 	return velocity;
     }
-
+    /**
+     *@return numChannels.
+     */
     public int getNumChannels() {
 	return numChannels;
     }
