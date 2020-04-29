@@ -185,7 +185,8 @@ public class Music {
                 prev.velocityOn());
                 channels[note.channel()].noteOn(note.pitch(),
                  note.velocityOn());
-                duration = (duration > note.duration()) ? note.duration() : duration;
+                duration = (duration > note.duration())
+                ? note.duration() : duration;
                 noteHistory.set(note.channel(), note);
             }
         }
@@ -212,7 +213,7 @@ public class Music {
         while (tuneIt.hasNext()) {
             System.out.println("[Line " + (line++) + "] ");
             chord = tuneIt.next();
-            playChord(chord,duration);
+            playChord(chord, duration);
         }
         silence();
     }
@@ -223,16 +224,16 @@ public class Music {
     public void silence() {
         Note note;
         int numNotes = noteHistory.size();
-        for (int i=0; i < numNotes; i++) {
+        for (int i = 0; i < numNotes; i++) {
             note = noteHistory.get(i);
-            channels[note.channel()].noteOff(note.pitch(),note.velocityOn());
+            channels[note.channel()].noteOff(note.pitch(), note.velocityOn());
         }
     }
     /**
     *@return synth.
     */
     public Synthesizer getSynthesizer() {
-	return synth;
+       return synth;
     }
     /**
     *@return channels.
