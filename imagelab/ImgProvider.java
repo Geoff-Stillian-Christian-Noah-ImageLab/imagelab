@@ -463,7 +463,7 @@ public class ImgProvider extends JComponent {
             satSum = 0;
             brtSum = 0;
         }//for row
-        int[] instruments = {Note.vibes, Note.pizzacatto, Note.melodicTom};
+        int[] instruments = {Note.VIBES, Note.PIZZICATO, Note.MELODICTOM};
         Music m = new Music(3, instruments);
         m.playTune(tune);
     }

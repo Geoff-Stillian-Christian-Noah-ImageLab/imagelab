@@ -16,7 +16,7 @@ public class Music {
     /** Standard Duration */
     public static final int STD_DURATION = Note.DE / 2;
     /** Standard Instrument */
-    public static final int STD_INSTRUMENT = Note.vibes;
+    public static final int STD_INSTRUMENT = Note.VIBES;
     /** Synthesizer reference */
     Synthesizer synth;
     /** Synthesizer channels */
