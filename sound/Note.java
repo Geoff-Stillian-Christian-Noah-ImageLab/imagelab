@@ -10,69 +10,69 @@ public class Note {
     /**Midi-instrument Program Number for Piano.*/
     public static final int Piano       =   1;
     /**Midi-instrument Program Number for ElecPiano.*/
-    public final static int ElectPiano  =   4;
+    public static final int ElectPiano  =   4;
     /**Midi-instrument Program Number for Harpsichord.*/
-    public final static int Harpsichord =   6;
+    public static final int Harpsichord =   6;
     /**Midi-instrument Program Number for Vibes.*/
-    public final static int Vibes       =  11;
+    public static final int Vibes       =  11;
     /**Midi-instrument Program Number for Organ.*/
-    public final static int Organ       =  19;
+    public static final int Organ       =  19;
     /**Midi-instrument Program Number for Accordian.*/
-    public final static int Accordian   =  23;
+    public static final int Accordian   =  23;
     /**Midi-instrument Program Number for Banjo.*/
-    public final static int Banjo       =  25;
+    public static final int Banjo       =  25;
     /**Midi-instrument Program Number for Pizzacatto.*/
-    public final static int Pizzacatto  =  45;
+    public static final int Pizzacatto  =  45;
     /**Midi-instrument Program Number for Violin.*/
-    public final static int Violin      =  52;
+    public static final int Violin      =  52;
     /**Midi-instrument Program Number for Trumpet.*/
-    public final static int Trumpet     =  56;
+    public static final int Trumpet     =  56;
     /**Midi-instrument Program Number for Trombone.*/
-    public final static int Trombone    =  57;
+    public static final int Trombone    =  57;
     /**Midi-instrument Program Number for Violin2.*/
-    public final static int Violin2     =  59;
+    public static final int Violin2     =  59;
     /**Midi-instrument Program Number for Violin3.*/
-    public final static int Violin3     =  65;
+    public static final int Violin3     =  65;
     /**Midi-instrument Program Number for TenorSax.*/
-    public final static int TenorSax    =  66;
+    public static final int TenorSax    =  66;
     /**Midi-instrument Program Number for Flute.*/
-    public final static int Flute       =  73;
+    public static final int Flute       =  73;
     /**Midi-instrument Program Number for PanFlute.*/
-    public final static int PanFlute    =  75;
+    public static final int PanFlute    =  75;
     /**Midi-instrument Program Number for Piano1.*/
-    public final static int Piano1      =  80;
+    public static final int Piano1      =  80;
     /**Midi-instrument Program Number for SynVoice.*/
-    public final static int SynVoice    =  85;
+    public static final int SynVoice    =  85;
     /**Midi-instrument Program Number for BassDrum.*/
-    public final static int BassDrum    = 116;
+    public static final int BassDrum    = 116;
     /**Midi-instrument Program Number for MelodicTom.*/
-    public final static int MelodicTom  = 117;
+    public static final int MelodicTom  = 117;
     /**Midi-instrument Program Number for SnareDrum.*/
-    public final static int SnareDrum   = 120;
+    public static final int SnareDrum   = 120;
     /** Midi Note Middle-C.*/
-    public final static int C  = 60;
+    public static final int C  = 60;
     /** Midi Minimum Note Pitch.*/
-    public final static int LOW = 25;
+    public static final int LOW = 25;
     /** Midi Maximum Note Pitch.*/
-    public final static int HIGH = 120;
+    public static final int HIGH = 120;
     /** Midi Note Pitch Range.*/
-    public final static int RANGE = HIGH - LOW;
+    public static final int RANGE = HIGH - LOW;
     /** Whole-Note Duration (in milliseconds).*/
-    public final static int DW = 2400;
+    public static final int DW = 2400;
     /** Eighth-Note Duration (in milliseconds).*/
-    public final static int DE = DW / 8;
+    public static final int DE = DW / 8;
     /** Quarter-Note Duration.*/
-    public final static int DQ = DW / 4;
+    public static final int DQ = DW / 4;
     /** Half-Note Duration.*/
-    public final static int DH = DW / 2;
+    public static final int DH = DW / 2;
     /** Midi Minimum Note-On Velocity - Pianissimo.*/
-    public final static int VPP = 25;
+    public static final int VPP = 25;
     /** Midi Maximum Note-On Velocity - Fortissimo.*/
-    public final static int VFF = 120;
+    public static final int VFF = 120;
     /** Midi Note-On Velocity Range.*/
-    public final static int VRANGE = VFF - VPP;
+    public static final int VRANGE = VFF - VPP;
     /** Special Note that represents the Null Note.*/
-    public final static Note NULL_NOTE = new Note(-1,-1,-1,-1);
+    public static final Note NULL_NOTE = new Note(-1, -1, -1, -1);
 
     // Instance Data
     private int channel;    // 0 to 15
