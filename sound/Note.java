@@ -117,7 +117,7 @@ public class Note {
      * Access this note's channel.
      * @return the channel
      */
-    public int channel() {
+    public int getChannel() {
         return channel;
     }
 
@@ -125,7 +125,7 @@ public class Note {
      * Access this note's pitch.
      * @return the pitch
      */
-    public int pitch() {
+    public int getPitch() {
         return pitch;
     }
 
@@ -133,7 +133,7 @@ public class Note {
      * Access this note's duration.
      * @return the channel
      */
-    public int duration() {
+    public int getDuration() {
         return duration;
     }
 
@@ -141,7 +141,7 @@ public class Note {
      * Access this note's velocity.
      * @return the velocity
      */
-    public int velocityOn() {
+    public int getVelocityOn() {
         return velocityOn;
     }
 
