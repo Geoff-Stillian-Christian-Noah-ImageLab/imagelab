@@ -145,9 +145,11 @@ public class Note {
         return velocityOn;
     }
 
+    /**To string print method
+     *for components of a Note.*/
     public String toString() {
-        return "[Channel " + channel 
-         + "; Pitch " + pitch 
+        return "[Channel " + channel
+         + "; Pitch " + pitch
          + "; Duration " + duration
          + "; velocityOn " + velocityOn + "]";
     }
