@@ -75,9 +75,15 @@ public class Note {
     public static final Note NULL_NOTE = new Note(-1, -1, -1, -1);
 
     // Instance Data
+    /*Midi channel through
+     *which instrument will
+     *be received.*/
     private int channel;    // 0 to 15
+    /**The pitch of the note.*/
     private int pitch;      // 0 to 127; 60 = Middle C
+    /**The duration of the note.*/
     private int duration;   // in milliseconds
+    /*The audible range of the note.*/
     private int velocityOn; // 0 to 127 (Note-On Velocity)
     
     /**
@@ -87,7 +93,7 @@ public class Note {
      * @param d duration
      * @param v velocityOn
      */
-    public Note(int c, int p, int d, int v) {
+    public Note(final int c, final int p, final int d, final int v) {
         channel = c;
         pitch = p;
         duration = d;
@@ -100,7 +106,7 @@ public class Note {
      * @param d duration
      * @param v velocityOn
      */
-    public Note(int c, Integer p, int d, int v) {
+    public Note(final int c, final Integer p, final int d, final int v) {
         channel = c;
         pitch = p.intValue();
         duration = d;
