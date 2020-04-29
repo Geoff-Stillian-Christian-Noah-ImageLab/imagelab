@@ -14,25 +14,25 @@ public class Scale {
     /** The pitches for this tune. */
     private List<Integer> scalePitches;
     /** Start of pitchInterval.*/
-    private static final START_PITCH_INTERVAL = -3;
+    private static final int START_PITCH_INTERVAL = -3;
     /** End of pitchInterval*/
-    private static final END_PITCH_INTERVAL = -3;
+    private static final int END_PITCH_INTERVAL = -3;
     /** The factor to move between octaves.*/
-    private static final OCTAVE_FACTOR = 12;
+    private static final int  OCTAVE_FACTOR = 12;
     /** A-Sharp in each octave.*/
-    private static final A_SHARP = 10;
+    private static final int A_SHARP = 10;
     /** Natural A in each octave.*/
-    private static final A_NAT = 9;
+    private static final int A_NAT = 9;
     /** Natural G in each octave.*/
-    private static final G_NAT = 7;
+    private static final int G_NAT = 7;
     /** Natural F in each octave.*/
-    private static final F_NAT = 5;
+    private static final int F_NAT = 5;
     /** Natural E in each octave.*/
-    private static final E_NAT = 4;
+    private static final int E_NAT = 4;
     /** D-Sharp in each octave.*/
-    private static final D_SHARP = 3;
+    private static final int D_SHARP = 3;
     /** Natural D in each octave.*/
-    private static final D_NAT = 2;
+    private static final int D_NAT = 2;
 
     /**
      * Construct an empty Scale.
