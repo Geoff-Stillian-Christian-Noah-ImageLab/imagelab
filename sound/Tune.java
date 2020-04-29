@@ -23,7 +23,7 @@ public class Tune {
     private static final int E_NAT = 4;
 
     /**Natural G.*/
-    private static fina int G_NAT = 7;
+    private static final int G_NAT = 7;
 
     /**
      * Construct a Tune with no chords or notes.
