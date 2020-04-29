@@ -239,25 +239,25 @@ public class Music {
     *@return channels.
     */
     public MidiChannel[] getChannels() {
-	return channels;
+       return channels;
     }
     /**
      *@return instrument.
      */
     public int getInstrument() {
-	return instrument;
+       return instrument;
     }
     /**
      *@return velocity.
      */
     public int getVelocity() {
-	return velocity;
+       return velocity;
     }
     /**
      *@return numChannels.
      */
     public int getNumChannels() {
-	return numChannels;
+       return numChannels;
     }
 
 }
