@@ -15,7 +15,7 @@ public class Scale {
     private List<Integer> scalePitches;
     /** Start of pitchInterval.*/
     private static final int START_PITCH_INTERVAL = -3;
-    /** End of pitchInterval*/
+    /** End of pitchInterval.*/
     private static final int END_PITCH_INTERVAL = -3;
     /** The factor to move between octaves.*/
     private static final int  OCTAVE_FACTOR = 12;
