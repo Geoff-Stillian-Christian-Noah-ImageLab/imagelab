@@ -11,23 +11,23 @@ import java.util.Iterator;
  * @version 1.2
  */
 public class Music {
-    /** Standard Velocity */
+    /** Standard Velocity.*/
     public static final int STD_VELOCITY = 64;
-    /** Standard Duration */
+    /** Standard Duration.*/
     public static final int STD_DURATION = Note.DE / 2;
-    /** Standard Instrument */
+    /** Standard Instrument.*/
     public static final int STD_INSTRUMENT = Note.VIBES;
-    /** Synthesizer reference */
-    Synthesizer synth;
-    /** Synthesizer channels */
-    MidiChannel[] channels;
-    /** code for default instrument */
-    int instrument;
-    /** Default note velocity */
-    int velocity = STD_VELOCITY;
-    /** Default number of Channels */
-    int numChannels = 1;
-    
+    /** Synthesizer reference.*/
+    private Synthesizer synth;
+    /** Synthesizer channels.*/
+    private MidiChannel[] channels;
+    /** code for default instrument.*/
+    private int instrument;
+    /** Default note velocity.*/
+    private int velocity = STD_VELOCITY;
+    /** Default number of Channels.*/
+    private int numChannels = 1;
+
     /**
      * Construct Music using Note.Vibes instrument.
      */
@@ -40,7 +40,7 @@ public class Music {
      * and a single channel.
      * @param instr the integer code for the midi instrument
      */
-    public Music(int instr) {
+    public Music(final int instr) {
         instrument = instr;
         velocity = STD_VELOCITY;
         numChannels = 1;
@@ -50,9 +50,10 @@ public class Music {
     /**
      * Construct Music with specified channels and instrument.
      * @param numCh the number of channels
-     * @param instr the integer code for the midi instrument to use for all channels
+     * @param instr the integer code for the midi
+     *instrument to use for all channels
      */
-    public Music(int numCh, int instr) {
+    public Music(final int numCh, final int instr) {
         instrument = instr;
         velocity = STD_VELOCITY;
         numChannels = numCh;
@@ -65,7 +66,7 @@ public class Music {
      * @param numCh the number of channels
      * @param instr the integer codes for the midi instruments
      */
-    public Music(int numCh, int[] instr) {
+    public Music(final int numCh, final int[] instr) {
         instrument = instr[0];
         velocity = STD_VELOCITY;
         numChannels = numCh;
@@ -85,7 +86,7 @@ public class Music {
      * Uses default instrument.
      * @param numCh the number of channels to initialize
      */
-    private void establishSynthesizer(int numCh) {
+    private void establishSynthesizer(final int numCh) {
         numChannels = numCh;
         establishSynthesizer(numChannels, instrument);
     }
@@ -93,25 +94,29 @@ public class Music {
     /**
      * Create and initialize the default synthesizer.
      * @param numCh the number of channels to initialize
-     * @param instr the integer code for the midi instrument used for every channel
+     * @param instr the integer code for the midi
+     * instrument used for every channel
      */
-    private void establishSynthesizer(int numCh, int instr) {
+    private void establishSynthesizer(final int numCh, final int instr) {
         int[] instruments = new int[numCh];
-        for (int i=0; i < numCh; i++) instruments[i] = instr;
+        for (int i = 0; i < numCh; i++) {
+       	     instruments[i] = instr;
+         }
         establishSynthesizer(numCh, instruments);
     }
 
     /**
      * Create and initialize the default synthesizer.
      * @param numCh the number of channels to initialize
-     * @param instr the integer code for the midi instrument used for every channel
+     * @param instr the integer code for the midi
+     * instrument used for every channel
      */
-    private void establishSynthesizer(int numCh, int[] instr) {
+    private void establishSynthesizer(final int numCh, final int[] instr) {
         try {
             synth = MidiSystem.getSynthesizer();
             synth.open();
             channels = synth.getChannels();
-            for (int i=0; i < numCh; i++) {
+            for (int i = 0; i < numCh; i++) {
                 channels[i].programChange(instr[i]);
             }
         } catch (Exception e) {
@@ -123,7 +128,7 @@ public class Music {
      * Create a list of the available instruments.
      * @return list of instruments available in this object's synth
      */
-    public java.util.List<Instrument> AvailableInstruments() {
+    public java.util.List<Instrument> availableInstruments() {
         java.util.List<Instrument> instruments = new java.util.ArrayList<Instrument>();
         Instrument[] availInst = synth.getAvailableInstruments();
         int numInst = availInst.length;
@@ -145,7 +150,7 @@ public class Music {
      * @param chord the chord to play
      * @param defaultDuration the default duration for notes
      */
-    public void playChord(Chord chord, int defaultDuration) {
+    public void playChord(final Chord chord, final int defaultDuration) {
         /** Current note */
         Note note;
         /** Previous note */
@@ -156,7 +161,7 @@ public class Music {
         int[] noteDurations = new int[chord.numVoices()];
         /** Chord iterator */
         Iterator<Note> chordIt = chord.iterator();
-        
+
         /** Establish history if this is the first chord played. */
         if (null == noteHistory) {
             noteHistory = new java.util.ArrayList<Note>();
@@ -187,12 +192,12 @@ public class Music {
             System.out.println("Problem sleeping?");
         }
     }
-    
+
     /**
      * Play a tune.
      * @param tune the tune to play
      */
-    public void playTune(Tune tune) {
+    public void playTune(final Tune tune) {
         /** Current chord */
         Chord chord;
         /** Current duration */
@@ -207,7 +212,7 @@ public class Music {
         }
         silence();
     }
-    
+
     /**
      * Stop all tones coming from synthesizer.
      */
@@ -218,6 +223,26 @@ public class Music {
             note = noteHistory.get(i);
             channels[note.channel()].noteOff(note.pitch(),note.velocityOn());
         }
+    }
+
+    public Synthesizer getSynthesizer() {
+	return synth;
+    }
+
+    public MidiChannel[] getChannels() {
+	return channels;
+    }
+
+    public int getInstrument() {
+	return instrument;
+    }
+
+    public int getVelocity() {
+	return velocity;
+    }
+
+    public int getNumChannels() {
+	return numChannels;
     }
 
 }
