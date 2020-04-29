@@ -146,7 +146,9 @@ public class Note {
     }
 
     /**To string print method
-     *for components of a Note.*/
+     *for components of a Note.
+     *@return toString for Note instance
+     *variables.*/
     public String toString() {
         return "[Channel " + channel
          + "; Pitch " + pitch
