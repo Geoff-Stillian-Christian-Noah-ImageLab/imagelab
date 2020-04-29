@@ -21,8 +21,8 @@ public class Note {
     public static final int ACCORDIAN   =  23;
     /**Midi-instrument Program Number for BANJO.*/
     public static final int BANJO       =  25;
-    /**Midi-instrument Program Number for PIZZiCATO.*/
-    public static final int PIZZiCATO  =  45;
+    /**Midi-instrument Program Number for PIZZICATO.*/
+    public static final int PIZZICATO  =  45;
     /**Midi-instrument Program Number for VIOLIN.*/
     public static final int VIOLIN      =  52;
     /**Midi-instrument Program Number for TRUMPET.*/
