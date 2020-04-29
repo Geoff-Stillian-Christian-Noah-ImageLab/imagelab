@@ -7,48 +7,48 @@ package sound;
  */
 public class Note {
     // Apple-OSX-Midi-instrument:int associations
-    /**Midi-instrument Program Number for Piano.*/
-    public static final int Piano       =   1;
-    /**Midi-instrument Program Number for ElecPiano.*/
-    public static final int ElectPiano  =   4;
-    /**Midi-instrument Program Number for Harpsichord.*/
-    public static final int Harpsichord =   6;
-    /**Midi-instrument Program Number for Vibes.*/
-    public static final int Vibes       =  11;
-    /**Midi-instrument Program Number for Organ.*/
-    public static final int Organ       =  19;
-    /**Midi-instrument Program Number for Accordian.*/
-    public static final int Accordian   =  23;
-    /**Midi-instrument Program Number for Banjo.*/
-    public static final int Banjo       =  25;
-    /**Midi-instrument Program Number for Pizzacatto.*/
-    public static final int Pizzacatto  =  45;
-    /**Midi-instrument Program Number for Violin.*/
-    public static final int Violin      =  52;
-    /**Midi-instrument Program Number for Trumpet.*/
-    public static final int Trumpet     =  56;
-    /**Midi-instrument Program Number for Trombone.*/
-    public static final int Trombone    =  57;
-    /**Midi-instrument Program Number for Violin2.*/
-    public static final int Violin2     =  59;
-    /**Midi-instrument Program Number for Violin3.*/
-    public static final int Violin3     =  65;
-    /**Midi-instrument Program Number for TenorSax.*/
-    public static final int TenorSax    =  66;
-    /**Midi-instrument Program Number for Flute.*/
-    public static final int Flute       =  73;
-    /**Midi-instrument Program Number for PanFlute.*/
-    public static final int PanFlute    =  75;
-    /**Midi-instrument Program Number for Piano1.*/
-    public static final int Piano1      =  80;
-    /**Midi-instrument Program Number for SynVoice.*/
-    public static final int SynVoice    =  85;
-    /**Midi-instrument Program Number for BassDrum.*/
-    public static final int BassDrum    = 116;
-    /**Midi-instrument Program Number for MelodicTom.*/
-    public static final int MelodicTom  = 117;
-    /**Midi-instrument Program Number for SnareDrum.*/
-    public static final int SnareDrum   = 120;
+    /**Midi-instrument Program Number for piano.*/
+    public static final int piano       =   1;
+    /**Midi-instrument Program Number for elecPiano.*/
+    public static final int electPiano  =   4;
+    /**Midi-instrument Program Number for harpsichord.*/
+    public static final int harpsichord =   6;
+    /**Midi-instrument Program Number for vibes.*/
+    public static final int vibes       =  11;
+    /**Midi-instrument Program Number for organ.*/
+    public static final int organ       =  19;
+    /**Midi-instrument Program Number for accordian.*/
+    public static final int accordian   =  23;
+    /**Midi-instrument Program Number for banjo.*/
+    public static final int banjo       =  25;
+    /**Midi-instrument Program Number for pizzacatto.*/
+    public static final int pizzacatto  =  45;
+    /**Midi-instrument Program Number for violin.*/
+    public static final int violin      =  52;
+    /**Midi-instrument Program Number for trumpet.*/
+    public static final int trumpet     =  56;
+    /**Midi-instrument Program Number for trombone.*/
+    public static final int trombone    =  57;
+    /**Midi-instrument Program Number for violin2.*/
+    public static final int violin2     =  59;
+    /**Midi-instrument Program Number for violin3.*/
+    public static final int violin3     =  65;
+    /**Midi-instrument Program Number for tenorSax.*/
+    public static final int tenorSax    =  66;
+    /**Midi-instrument Program Number for flute.*/
+    public static final int flute       =  73;
+    /**Midi-instrument Program Number for panFlute.*/
+    public static final int panFlute    =  75;
+    /**Midi-instrument Program Number for piano1.*/
+    public static final int piano1      =  80;
+    /**Midi-instrument Program Number for synVoice.*/
+    public static final int synVoice    =  85;
+    /**Midi-instrument Program Number for bassDrum.*/
+    public static final int bassDrum    = 116;
+    /**Midi-instrument Program Number for melodicTom.*/
+    public static final int melodicTom  = 117;
+    /**Midi-instrument Program Number for snareDrum.*/
+    public static final int snareDrum   = 120;
     /** Midi Note Middle-C.*/
     public static final int C  = 60;
     /** Midi Minimum Note Pitch.*/
