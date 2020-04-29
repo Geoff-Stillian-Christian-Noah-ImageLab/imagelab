@@ -8,7 +8,7 @@ package sound;
 public class Note {
     // Apple-OSX-Midi-instrument:int associations
     /**Midi-instrument Program Number for piano.*/
-    public static final int piano       =   1;
+    public static final int piano = 1;
     /**Midi-instrument Program Number for elecPiano.*/
     public static final int electPiano  =   4;
     /**Midi-instrument Program Number for harpsichord.*/
