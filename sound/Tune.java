@@ -20,10 +20,10 @@ public class Tune {
     private int numVoices = 1;
 
     /** Natural E.*/
-    private static final int E_NAT = 4;
+    private static final int MAJOR_THIRD = 4;
 
     /**Natural G.*/
-    private static final int G_NAT = 7;
+    private static final int PERFECT_FIFTH = 7;
 
     /**
      * Construct a Tune with no chords or notes.
@@ -66,11 +66,11 @@ public class Tune {
                            Note.DH,
                            Note.VPP + Note.VRANGE / 2));
         c.addNote(new Note(1,
-                           Note.C + E_NAT,
+                           Note.C + MAJOR_THIRD,
                            Note.DH,
                            Note.VPP + Note.VRANGE / 2));
         c.addNote(new Note(2,
-                           Note.C + G_NAT,
+                           Note.C + PERFECT_FIFTH,
                            Note.DH,
                            Note.VPP + Note.VRANGE / 2));
         t.addChord(c);
