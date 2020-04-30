@@ -10,7 +10,7 @@ public class Note {
     /**Midi-instrument Program Number for PIANO.*/
     public static final int PIANO = 1;
     /**Midi-instrument Program Number for ELECPIANO.*/
-    public static final int ELECPIANO  =   4;
+    public static final int ELEC_PIANO  =   4;
     /**Midi-instrument Program Number for HARPSICHORD.*/
     public static final int HARPSICHORD =   6;
     /**Midi-instrument Program Number for VIBES.*/
@@ -30,25 +30,25 @@ public class Note {
     /**Midi-instrument Program Number for TROMBONE.*/
     public static final int TROMBONE    =  57;
     /**Midi-instrument Program Number for VIOLIN2.*/
-    public static final int VIOLIN2     =  59;
+    public static final int VIOLIN_2     =  59;
     /**Midi-instrument Program Number for VIOLIN3.*/
-    public static final int VIOLIN3     =  65;
+    public static final int VIOLIN_3     =  65;
     /**Midi-instrument Program Number for TENORSAX.*/
-    public static final int TENORSAX    =  66;
+    public static final int TENOR_SAX    =  66;
     /**Midi-instrument Program Number for FLUTE.*/
     public static final int FLUTE       =  73;
     /**Midi-instrument Program Number for PANFLUTE.*/
-    public static final int PANFLUTE    =  75;
+    public static final int PAN_FLUTE    =  75;
     /**Midi-instrument Program Number for PIANO1.*/
-    public static final int PIANO1      =  80;
+    public static final int PIANO_1      =  80;
     /**Midi-instrument Program Number for SYNVOICE.*/
-    public static final int SYNVOICE    =  85;
+    public static final int SYN_VOICE    =  85;
     /**Midi-instrument Program Number for BASSDRUM.*/
-    public static final int BASSDRUM    = 116;
+    public static final int BASS_DRUM    = 116;
     /**Midi-instrument Program Number for MELODICTOM.*/
-    public static final int MELODICTOM  = 117;
+    public static final int MELODIC_TOM  = 117;
     /**Midi-instrument Program Number for SNAREDRUM.*/
-    public static final int SNAREDRUM   = 120;
+    public static final int SNARE_DRUM   = 120;
     /** Midi Note Middle-C.*/
     public static final int C  = 60;
     /** Midi Minimum Note Pitch.*/
