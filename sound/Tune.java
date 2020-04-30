@@ -19,10 +19,10 @@ public class Tune {
     /** The number of voices for this tune (default 1). */
     private int numVoices = 1;
 
-    /** Natural E.*/
+    /** Natural E. */
     private static final int MAJOR_THIRD = 4;
 
-    /**Natural G.*/
+    /**Natural G. */
     private static final int PERFECT_FIFTH = 7;
 
     /**
@@ -57,7 +57,8 @@ public class Tune {
     }
 
     /** A sample tune for testing.
-     *@return a tune with chords. */
+     *@return a tune with chords
+     */
     public static Tune sampleTune() {
         Tune t = new Tune();
         Chord c = new Chord();
