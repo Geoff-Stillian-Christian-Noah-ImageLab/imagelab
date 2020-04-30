@@ -226,7 +226,8 @@ public class Music {
         int numNotes = noteHistory.size();
         for (int i = 0; i < numNotes; i++) {
             note = noteHistory.get(i);
-            channels[note.getChannel()].noteOff(note.getPitch(), note.getVelocityOn());
+            channels[note.getChannel()].noteOff(note.getPitch(),
+                    note.getVelocityOn());
         }
     }
 
