@@ -27,9 +27,9 @@ public class ImgProvider extends JComponent {
     /** True if this ImgProvider currently holds an image; false otherwise. */
     private boolean isLoaded;
     /** Image height in pixels. */
-    private int pixheight;
+    protected int pixheight;
     /** Image width in pixels. */
-    private int pixwidth;
+    protected int pixwidth;
     /** The raw image. */
     private Image img;
     /** Holders for the color and alpha components of the image. */
@@ -37,7 +37,7 @@ public class ImgProvider extends JComponent {
     /** To retrieve pixels from the image. */
     private PixelGrabber grab;
     /** Holder for the pixels from the image. */
-    private int[] pix;
+    protected int[] pix;
     /** X-axis increment used for trimming the image. */
     private int xinc = 0;
     /** Y-axis increment used for trimming the image. */
