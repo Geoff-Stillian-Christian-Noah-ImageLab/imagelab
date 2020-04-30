@@ -26,7 +26,7 @@ public class Scale {
     /** Natural G in each octave.*/
     private static final int PERFECT_FIFTH = 7;
     /** Natural F in each octave.*/
-    private static final int PEFECT_FOURTH = 5;
+    private static final int PERFECT_FOURTH = 5;
     /** Natural E in each octave.*/
     private static final int MAJOR_THIRD = 4;
     /** D-Sharp in each octave.*/
@@ -125,7 +125,7 @@ public class Scale {
         Scale s = new Scale();
         for (int i = START_PITCH_INTERVAL; i < END_PITCH_INTERVAL; i++) {
             s.addPitch(Note.C + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + MINOR_SECOND) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR__SECOND) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + MAJOR_THIRD) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + PERFECT_FIFTH) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + MAJOR_SIXTH) + (OCTAVE_FACTOR * i));
