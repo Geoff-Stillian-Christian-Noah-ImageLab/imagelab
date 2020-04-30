@@ -174,20 +174,20 @@ public class Music {
         while (chordIt.hasNext()) {
             note = chordIt.next();
             // System.out.println("  Note: " + note);
-            prev = noteHistory.get(note.channel());
+            prev = noteHistory.get(note.getChannel());
             if (note.equals(Note.NULL_NOTE)) {
                 //System.out.print("[NULL_NOTE] ");
-                channels[note.channel()].noteOff(prev.pitch(),
-                        prev.velocityOn());
-            } else if (note.pitch() != prev.pitch()) {
+                channels[note.getChannel()].noteOff(prev.getPitch(),
+                        prev.getVelocityOn());
+            } else if (note.getPitch() != prev.getPitch()) {
                 // System.out.println("  Note: " + note);
-                channels[note.channel()].noteOff(prev.pitch(),
-                        prev.velocityOn());
-                channels[note.channel()].noteOn(note.pitch(),
-                        note.velocityOn());
-                duration = (duration > note.duration())
-                        ? note.duration() : duration;
-                noteHistory.set(note.channel(), note);
+                channels[note.getChannel()].noteOff(prev.getPitch(),
+                        prev.getVelocityOn());
+                channels[note.getChannel()].noteOn(note.getPitch(),
+                        note.getVelocityOn());
+                duration = (duration > note.getDuration())
+                        ? note.getDuration() : duration;
+                noteHistory.set(note.getChannel(), note);
             }
         }
         try {
@@ -226,7 +226,7 @@ public class Music {
         int numNotes = noteHistory.size();
         for (int i = 0; i < numNotes; i++) {
             note = noteHistory.get(i);
-            channels[note.channel()].noteOff(note.pitch(), note.velocityOn());
+            channels[note.getChannel()].noteOff(note.getPitch(), note.getVelocityOn());
         }
     }
 
