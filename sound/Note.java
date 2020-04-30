@@ -151,8 +151,8 @@ public class Note {
      *variables.*/
     public String toString() {
         return "[Channel " + channel
-         + "; Pitch " + pitch
-         + "; Duration " + duration
-         + "; velocityOn " + velocityOn + "]";
+                + "; Pitch " + pitch
+                + "; Duration " + duration
+                + "; velocityOn " + velocityOn + "]";
     }
 }
