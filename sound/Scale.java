@@ -125,7 +125,7 @@ public class Scale {
         Scale s = new Scale();
         for (int i = START_PITCH_INTERVAL; i < END_PITCH_INTERVAL; i++) {
             s.addPitch(Note.C + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + MAJOR__SECOND) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR_SECOND) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + MAJOR_THIRD) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + PERFECT_FIFTH) + (OCTAVE_FACTOR * i));
             s.addPitch((Note.C + MAJOR_SIXTH) + (OCTAVE_FACTOR * i));
