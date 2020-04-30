@@ -20,19 +20,19 @@ public class Scale {
     /** The factor to move between octaves.*/
     private static final int  OCTAVE_FACTOR = 12;
     /** A-Sharp in each octave.*/
-    private static final int A_SHARP = 10;
+    private static final int MINOR_SEVENTH = 10;
     /** Natural A in each octave.*/
-    private static final int A_NAT = 9;
+    private static final int MAJOR_SIXTH = 9;
     /** Natural G in each octave.*/
-    private static final int G_NAT = 7;
+    private static final int PERFECT_FIFTH = 7;
     /** Natural F in each octave.*/
-    private static final int F_NAT = 5;
+    private static final int PEFECT_FOURTH = 5;
     /** Natural E in each octave.*/
-    private static final int E_NAT = 4;
+    private static final int MAJOR_THIRD = 4;
     /** D-Sharp in each octave.*/
-    private static final int D_SHARP = 3;
+    private static final int MINOR_THIRD = 3;
     /** Natural D in each octave.*/
-    private static final int D_NAT = 2;
+    private static final int MAJOR_SECOND = 2;
 
     /**
      * Construct an empty Scale.
@@ -92,10 +92,10 @@ public class Scale {
         Scale s = new Scale();
         for (int i = START_PITCH_INTERVAL; i < END_PITCH_INTERVAL; i++) {
             s.addPitch(Note.C + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + D_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + F_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + G_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + A_NAT) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR_SECOND) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + PERFECT_FOURTH) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + PERFECT_FIFTH) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR_SIXTH) + (OCTAVE_FACTOR * i));
         }
         s.addPitch((Note.C + (OCTAVE_FACTOR * END_PITCH_INTERVAL)));
         return s;
@@ -109,10 +109,10 @@ public class Scale {
         Scale s = new Scale();
         for (int i = START_PITCH_INTERVAL; i < END_PITCH_INTERVAL; i++) {
             s.addPitch(Note.C + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + D_SHARP)  + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + F_NAT)  + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + G_NAT)  + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + A_SHARP) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MINOR_THIRD)  + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + PERFECT_FOURTH)  + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + PERFECT_FIFTH)  + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MINOR_SEVENTH) + (OCTAVE_FACTOR * i));
         }
         s.addPitch((Note.C + (OCTAVE_FACTOR * END_PITCH_INTERVAL)));
         return s;
@@ -125,10 +125,10 @@ public class Scale {
         Scale s = new Scale();
         for (int i = START_PITCH_INTERVAL; i < END_PITCH_INTERVAL; i++) {
             s.addPitch(Note.C + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + D_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + E_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + G_NAT) + (OCTAVE_FACTOR * i));
-            s.addPitch((Note.C + A_NAT) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MINOR_SECOND) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR_THIRD) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + PERFECT_FIFTH) + (OCTAVE_FACTOR * i));
+            s.addPitch((Note.C + MAJOR_SIXTH) + (OCTAVE_FACTOR * i));
         }
         s.addPitch((Note.C + (OCTAVE_FACTOR * END_PITCH_INTERVAL)));
         return s;
