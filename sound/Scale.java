@@ -19,19 +19,19 @@ public class Scale {
     private static final int END_PITCH_INTERVAL = -3;
     /** The factor to move between octaves.*/
     private static final int  OCTAVE_FACTOR = 12;
-    /** A-Sharp in each octave.*/
+    /** The number of semitones in a minor seventh interval. */
     private static final int MINOR_SEVENTH = 10;
-    /** Natural A in each octave.*/
+    /** The number of semitones in a major sixth interval. */
     private static final int MAJOR_SIXTH = 9;
-    /** Natural G in each octave.*/
+    /** The number of semitones in a perfect fifth interval. */
     private static final int PERFECT_FIFTH = 7;
-    /** Natural F in each octave.*/
+    /** The number of semitones in a perfect fourth interval. */
     private static final int PERFECT_FOURTH = 5;
-    /** Natural E in each octave.*/
+    /** The number of semitones in a major third interval. */
     private static final int MAJOR_THIRD = 4;
-    /** D-Sharp in each octave.*/
+    /** The number of semitones in a minor third interval. */
     private static final int MINOR_THIRD = 3;
-    /** Natural D in each octave.*/
+    /** The number of semitones in a major second interval. */
     private static final int MAJOR_SECOND = 2;
 
     /**
