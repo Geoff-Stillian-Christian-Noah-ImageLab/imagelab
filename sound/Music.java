@@ -250,7 +250,7 @@ public class Music {
       *@return Midi instrument number
       */
      int getInstrument() {
-        retrun instrument;
+        return instrument;
      }
 
      /**
