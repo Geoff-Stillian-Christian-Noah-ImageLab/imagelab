@@ -231,4 +231,41 @@ public class Music {
         }
     }
 
+    /**
+     *@return synthesizer interface
+     *        reference
+     */
+      Synthesizer getSynthesizer() {
+         return synth;
+     }
+
+     /**
+      *@return channels in this synth
+      */
+     MidiChannel[] getChannels() {
+        return channels;
+     }
+
+     /**
+      *@return Midi instrument number
+      */
+     int getInstrument() {
+        retrun instrument;
+     }
+
+     /**
+      *@return this notes velocity
+      */
+      int getVelocity() {
+         return velocity;
+      }
+
+     /**
+      *@return number of channels available
+      *        for this synth
+      */
+      int getNumChannels() {
+         return numChannels;
+      }
+ 
 }
