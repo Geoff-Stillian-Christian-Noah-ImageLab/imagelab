@@ -19,10 +19,10 @@ public class Tune {
     /** The number of voices for this tune (default 1). */
     private int numVoices = 1;
 
-    /** Natural E. */
+    /** The number of semitones in a major third interval. */
     private static final int MAJOR_THIRD = 4;
 
-    /**Natural G. */
+    /**The number of semitones in a perfect fifth interval. */
     private static final int PERFECT_FIFTH = 7;
 
     /**
