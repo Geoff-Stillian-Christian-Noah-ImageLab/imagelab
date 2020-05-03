@@ -1,10 +1,11 @@
 package imagelab;
 
-import java.awt.Color;
 import javax.swing.JFrame;
+import java.awt.Color;
 
 /**
  * Graphics frame used to display an image.
+ *
  * @author Dr. Jody Paul
  * @version 1.1
  */
@@ -12,7 +13,7 @@ public abstract class ILFrame extends JFrame {
     /** Serialization version. */
     private static final long serialVersionUID = 11L;
     /** Image provider that activated this frame. */
-    protected ImgProvider improvider;
+    public ImgProvider improvider;
     /** Vertical space needed for frame title. */
     public static final int TITLE_HEIGHT = 40;
     /** Vertical space needed for menu bar. */
