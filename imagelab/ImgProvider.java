@@ -1,10 +1,17 @@
 package imagelab;
 
-import sound.*;
+import sound.Chord;
+import sound.Music;
+import sound.Note;
+import sound.Scale;
+import sound.Tune;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.MemoryImageSource;
 import java.awt.image.PixelGrabber;
@@ -56,6 +63,26 @@ public class ImgProvider extends JComponent {
     static final int RANGE = 8;
     /** Default time to sleep. */
     static final int SLEEP_TIME = 300;
+    /** Number of music channels. */
+    static final int NUM_CHANNELS = 3;
+    /** Pitch modifier for the play method. */
+    static final int PITCH_MODIFIER = 256;
+    /** Sleep time for display. */
+    static final int DISPLAY_SLEEP_TIME = 1000;
+    /** First octive adjustment. */
+    static final int OCTIVE_ONE = 3;
+    /** Second octive adjustment. */
+    static final int OCTIVE_TWO = 5;
+    /** Third octive adjustment. */
+    static final int OCTIVE_THREE = 7;
+    /** Fourth octive adjustment. */
+    static final int OCTIVE_FOUR = 10;
+    /** Octive modifier. */
+    static final int OCTIVE_MODIFIER = 12;
+    /** Start of the scale. */
+    static final int SCALE_START = -3;
+    /** End of the scale. */
+    static final int SCALE_END = 4;
 
 
     /** No-argument constructor.  Sets name to empty string. */
@@ -183,23 +210,23 @@ public class ImgProvider extends JComponent {
 
     /** Convert from color to gray scale (black and white). */
     private void toBW() {
-        int alpha, red, green, blue, black;
+        int alphaToBW, redToBW, greenToBW, blueToBW, blackToBW;
 
         for (int i = 0; i < pix.length; i++) {
             int num = pix[i];
             final int numOfValues = 3;
-            blue = num & ALPHA;
+            blueToBW = num & ALPHA;
             num = num >> RANGE;
-            green = num & ALPHA;
+            greenToBW = num & ALPHA;
             num = num >> RANGE;
-            red = num & ALPHA;
+            redToBW = num & ALPHA;
             num = num >> RANGE;
-            alpha = num & ALPHA;
-            black = (red + green + blue) / numOfValues;
-            num = alpha;
-            num = (num << RANGE) + black;
-            num = (num << RANGE) + black;
-            num = (num << RANGE) + black;
+            alphaToBW = num & ALPHA;
+            blackToBW = (redToBW + greenToBW + blueToBW) / numOfValues;
+            num = alphaToBW;
+            num = (num << RANGE) + blackToBW;
+            num = (num << RANGE) + blackToBW;
+            num = (num << RANGE) + blackToBW;
             pix[i] = num;
         }
         if (all) {
@@ -475,11 +502,11 @@ public class ImgProvider extends JComponent {
      * of the Red, Green and Blue notes respectively.
      */
     public void play() {
-        short[][] red = getRed();     // Red plane
-        short[][] green = getGreen(); // Green plane
-        short[][] blue = getBlue();   // Blue plane
+        short[][] playRed = getRed();     // Red plane
+        short[][] playGreen = getGreen(); // Green plane
+        short[][] playBlue = getBlue();   // Blue plane
         short[][] bw = getBWImage();  // Black & white image
-        short[][] alpha = getAlpha(); // Alpha channel
+        short[][] playAlpha = getAlpha(); // Alpha channel
         short[][] hue;
         short[][] saturation;
         short[][] brightness;
@@ -492,12 +519,12 @@ public class ImgProvider extends JComponent {
         Tune tune = new Tune();
         /* A 7-octave pentatonic scale. */
         Scale scale = new Scale();
-        for (int i = -3; i < 4; i++) {
-            scale.addPitch(Note.C + (12 * i));
-            scale.addPitch((Note.C + 3) + (12 * i));
-            scale.addPitch((Note.C + 5) + (12 * i));
-            scale.addPitch((Note.C + 7) + (12 * i));
-            scale.addPitch((Note.C + 10) + (12 * i));
+        for (int i = SCALE_START; i < SCALE_END; i++) {
+            scale.addPitch(Note.C + (OCTIVE_MODIFIER * i));
+            scale.addPitch((Note.C + OCTIVE_ONE) + (OCTIVE_MODIFIER * i));
+            scale.addPitch((Note.C + OCTIVE_TWO) + (OCTIVE_MODIFIER * i));
+            scale.addPitch((Note.C + OCTIVE_THREE) + (OCTIVE_MODIFIER * i));
+            scale.addPitch((Note.C + OCTIVE_FOUR) + (OCTIVE_MODIFIER * i));
         }
         int pitchRange = scale.numPitches();
         Chord chord;
@@ -516,11 +543,11 @@ public class ImgProvider extends JComponent {
         for (int row = 0; row < height; row++) {
             for (int column = 0; column < width; column++) {
                 rowSum += (bw[row][column]);
-                redSum += (red[row][column]);
-                greenSum += (green[row][column]);
-                blueSum += (blue[row][column]);
-                java.awt.Color.RGBtoHSB(red[row][column], green[row][column],
-                        blue[row][column], hsb);
+                redSum += (playRed[row][column]);
+                greenSum += (playGreen[row][column]);
+                blueSum += (playBlue[row][column]);
+                java.awt.Color.RGBtoHSB(playRed[row][column],
+                playGreen[row][column], playBlue[row][column], hsb);
                 hueSum += hsb[0];
                 satSum += hsb[1];
                 brtSum += hsb[2];
@@ -530,11 +557,11 @@ public class ImgProvider extends JComponent {
             velocity[2] = (int) (Note.VPP + (velocityRange * (brtSum / width)));
             chord = new Chord();
             chord.addNote(new Note(0, (scale.getPitch(pitchRange
-                    * redSum / width / 256)), tempo, velocity[0]));
+                    * redSum / width / PITCH_MODIFIER)), tempo, velocity[0]));
             chord.addNote(new Note(1, (scale.getPitch(pitchRange
-                    * greenSum / width / 256)), tempo, velocity[1]));
+                    * greenSum / width / PITCH_MODIFIER)), tempo, velocity[1]));
             chord.addNote(new Note(2, (scale.getPitch(pitchRange
-                    * blueSum / width / 256)), tempo, velocity[2]));
+                    * blueSum / width / PITCH_MODIFIER)), tempo, velocity[2]));
             tune.addChord(chord);
             rowSum = 0;
             redSum = 0;
@@ -545,7 +572,7 @@ public class ImgProvider extends JComponent {
             brtSum = 0;
         }
         int[] instruments = {Note.Vibes, Note.Pizzacatto, Note.MelodicTom};
-        Music m = new Music(3, instruments);
+        Music m = new Music(NUM_CHANNELS, instruments);
         m.playTune(tune);
     }
 
@@ -569,7 +596,7 @@ public class ImgProvider extends JComponent {
         System.out.println("ImgProvider:showSlow: size is ("
                 + pixwidth + ", " + pixheight + ")");
         try {
-            Thread.sleep(1000);  //give image time to display
+            Thread.sleep(DISPLAY_SLEEP_TIME);  //give image time to display
         } catch (Exception e) {
         }
         dImage1.changeImage(this, "Second Pass");
