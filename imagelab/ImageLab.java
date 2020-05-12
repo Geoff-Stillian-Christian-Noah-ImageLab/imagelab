@@ -56,16 +56,16 @@ public class ImageLab {
     /** Accessible menu bar for ImageLab. */
     private static JMenuBar menubar;
 
-    /**X-Coordinate for Frame Bounds. */
+    /** X-Coordinate for Frame Bounds. */
     private static final int FRAME_X = 400;
 
-    /**Y-Coordinate for Frame Bounds. */
+    /** Y-Coordinate for Frame Bounds. */
     private static final int FRAME_Y = 30;
 
-    /**Width for Frame Bounds. */
+    /** Width for Frame Bounds. */
     private static final int FRAME_WIDTH = 300;
 
-    /**Height for Frame Bounds. */
+    /** Height for Frame Bounds. */
     private static final int FRAME_HEIGHT = 100;
 
     /**
@@ -103,8 +103,6 @@ public class ImageLab {
                         fd.setVisible(true);
                         String theFile = fd.getFile();
                         String theDir = fd.getDirectory();
-                        //System.out.println("The file's name is "
-                        //+ theDir + theFile);
                         improvider = new ImgProvider(theDir + theFile);
                         improvider.setLab(theLab);
                         improvider.showImage(theDir + theFile);
