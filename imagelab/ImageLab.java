@@ -332,8 +332,7 @@ public class ImageLab {
                 //The imgProvider holding the image
                 ImgProvider improvider = impro;
                 if (improvider == null) {
-                    JOptionPane.showMessageDialog(myframe,
-                    "First select the image to play");
+                    JOptionPane.showMessageDialog(myframe, "First select the image to play");
                     return;
                 } //if
                 improvider.play();
